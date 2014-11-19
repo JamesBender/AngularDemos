@@ -7,7 +7,7 @@ function ServicesController($scope, $http){
 
 	$scope.userToGet = 0;
 
-	var baseUrl = 'http://localhost:18593//api/Person';
+	var baseUrl = 'http://localhost:26882//api/Person';
 
 	$scope.retrieve = function(id){
 		$http.get(baseUrl + "/" + id)
