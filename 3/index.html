@@ -1,0 +1,19 @@
+<html ng-app>
+	<head>
+		<title>Simple Form</title>
+		<script src="../angular.min.js"></script>
+		<script src="./SimpleFormController.js"></script>
+	</head>
+	<body>
+		<h2>Simple Form</h2>
+		
+		<form ng-controller="FormController" ng-submit="save()">
+			First Name: <input ng-model="user.FirstName"/><br/>
+			Last Name: <input ng-model="user.LastName" /><br/>
+			Birthdate: <input ng-model="user.Birthdate" type="date" placeholder="yyyy-MM-dd" /><br/>
+			Pick a number between 1 and 5: 
+			<input ng-model="user.NumPicked" ng-change="numberChanged(user.NumPicked)"/><br/>
+			<button>Add Me</button>
+		</form>
+	</body>
+</html>

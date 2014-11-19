@@ -1,0 +1,18 @@
+<html ng-app>
+	<head>
+		<title>... with Services</title>
+		<script src="../angular.min.js"></script>
+		<script src="./ServicesController.js"></script>
+	</head>
+	<body>
+		<h2>Services</h2>
+		
+		<form ng-controller="ServicesController">
+			First Name: <input ng-model="user.FirstName"/><br/>
+			Last Name: <input ng-model="user.LastName" /><br/>
+			User Name: <input ng-model="user.UserName" /><br/>
+			<button ng-click="retrieve(1)">Get</button>
+			<button ng-click="save()">Add Me</button>
+		</form>
+	</body>
+</html>
