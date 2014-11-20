@@ -1,0 +1,18 @@
+<table>
+	<thead>
+		<tr>
+			<th>Names</th>
+			<th>Artist</th>
+			<th>Year</th>					
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="album in albums">
+			<td>{{album.Name}}</td>
+			<td>{{album.Artist}}</td>
+			<td>{{album.Year}}</td>
+			<td><button ng-click="getAlbum(album.Id)">Get Album Detail</button></td>
+		</tr>
+	</tbody>
+</table>
