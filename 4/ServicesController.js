@@ -16,7 +16,7 @@ function ServicesController($scope, $http){
 			})
 			.error(function(data, status, headers, config){
 				window.alert("didn't work " + status);
-			})
+			});
 	}
 
 	$scope.save = function(){
