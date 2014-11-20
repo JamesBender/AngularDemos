@@ -9,15 +9,12 @@ angular.module('myApp.mainView', ['ngRoute', 'ngResource'])
   });
 }])
 
-.controller('MainCtrl', ['$scope', 'Albums', function($scope, Albums) {
+.controller('MainCtrl', ['$scope', 'Albums', '$location', function($scope, Albums, $location) {
 	Albums.query(function(data){
 		$scope.albums = data;
 	});
 
 	$scope.getAlbum = function(id){
-		Albums.get({id: id}, function(data){
-			$scope.currentAlbum = data;
-			window.alert ('id is ' + data.Id);
-		});
+		$location.path("/detail/" + id);			
 	};
 }]);
