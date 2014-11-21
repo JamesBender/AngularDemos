@@ -1,0 +1,33 @@
+<html ng-app>
+	<head>
+		<title>Basic Scope Binding Demo</title>
+		<script src="../angular.min.js"></script>
+		<!-- <script src="BasicController.js"></script> -->
+	</head>
+	<body>
+		<h2>(Expression) Welcome {{1 + 1}} the Angular World</h2>
+
+		<input ng-model="name">
+		<h3>(Implicit Scope) Hello {{name}}</h3>
+<!-- 
+		<div ng-controller="BasicController">
+			
+			<h4>(Controller $scope) This is a message from {{scopeName}}</h4>
+
+
+			<button ng-click="changeName()">Change</button>
+
+			<ul>
+				<li ng-repeat="char in characterList">
+					{{char.characterName}}
+				</li>
+			</ul>
+
+			<input ng-model="scopeName" />
+
+		</div> -->
+
+
+
+	</body>
+</html>
