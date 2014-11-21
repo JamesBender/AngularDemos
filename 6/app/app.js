@@ -4,11 +4,10 @@
 angular.module('myApp', [
   'ngRoute',
   'ngResource',
-  'myApp.view1',
-  'myApp.view2',
   'myApp.mainView',
   'myApp.detailView',
   'myApp.createView',
+  'myApp.editView',
   'myApp.version',
   'albumService'
 ]).

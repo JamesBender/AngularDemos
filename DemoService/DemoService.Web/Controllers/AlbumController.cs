@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 using DemoService.Web.Models;
 using DemoService.Web.Models.ViewModels;
 
@@ -22,24 +25,35 @@ namespace DemoService.Web.Controllers
             return _albumModel.GetAllAlbums();
         }
 
-        public Album GetAlbum(int id)
+        public HttpResponseMessage GetAlbum(int id)
         {
             var album = _albumModel.GetAlbum(id);
 
             if (album == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return new HttpResponseMessage(HttpStatusCode.NotFound);
             }
-            else
-            {
-                return album;
-            }
+            return Request.CreateResponse(HttpStatusCode.OK, album);
         }
 
         public int PostAlbum(Album album)
         {
             var newId = _albumModel.SaveAlbum(album);
             return newId;
+        }
+
+        public HttpResponseMessage PutAlbum(int id, Album album)
+        {
+            try
+            {
+                _albumModel.SaveAlbum(album);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            catch (Exception)
+            {
+                
+                return new HttpResponseMessage(HttpStatusCode.MethodNotAllowed);
+            }
         }
     }
 }
