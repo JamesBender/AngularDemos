@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.view2',
   'myApp.mainView',
   'myApp.detailView',
+  'myApp.createView',
   'myApp.version',
   'albumService'
 ]).
